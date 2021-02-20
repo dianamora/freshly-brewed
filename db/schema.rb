@@ -24,8 +24,10 @@ ActiveRecord::Schema.define(version: 2021_02_18_184558) do
     t.string "milk"
     t.string "sweetener"
     t.string "espresso"
+    t.integer "coffee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["coffee_id"], name: "index_drinks_on_coffee_id"
   end
 
 end

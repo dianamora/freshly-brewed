@@ -5,6 +5,7 @@ class CreateDrinks < ActiveRecord::Migration[6.1]
       t.string :milk
       t.string :sweetener
       t.string :espresso
+      t.belongs_to :coffee
 
       t.timestamps
     end
