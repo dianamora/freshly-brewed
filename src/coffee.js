@@ -18,7 +18,7 @@ class Coffee {
         .then(coffeeData => {
             coffeeData.forEach(coffee => {
                 let covfefe = new Coffee(coffee)
-                covfefe.addToDom()
+                covfefe.addToDom(coffeesList)
                 console.log(covfefe)
              })
         })
@@ -27,16 +27,17 @@ class Coffee {
     static handleClick(e){
         coffeesList.style.display="none"
         coffeeShow.style.display=""
+
         let coffeeId = parseInt(e.target.id.split("-")[1])
         Drink.fetchDrinks(coffeeId)
     }
 
-    addToDom(){
+    addToDom(node){
         let img = document.createElement('img');
         img.src = this.img_url
         img.id = `coffee-${this.id}`
-        coffeesList.appendChild(img)
-        img.addEventListener('click', Coffee.handleClick)
+       node.appendChild(img)
+        img.addEventListener('click', (e) => this.handleClick(e))
     }
     
 }
