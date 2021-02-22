@@ -28,6 +28,7 @@ class Coffee {
         img.src = this.img_url
         img.id = `coffee-${this.id}`
         coffeesList.appendChild(img)
+        img.addEventListener('click', () => console.log(this))
     }
     
 }
