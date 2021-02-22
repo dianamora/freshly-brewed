@@ -15,7 +15,19 @@
     <div id="coffees-list"></div>
      
     <div id="coffee-show" style="display:none">
-      <h1>Coffee</h1>
+      <form id="new-coffee">
+          <label for="roast">Roast:</label><br>
+            <input type="text" name="roast" id="roast"><br>
+          <label for="milk">Milk:</label><br>
+            <input type="text" name="milk" id="milk"><br>
+          <label for="sweetener">Sweetener:</label><br>
+            <input type="text" name="sweetener" id="sweetener"><br>
+          <label for="espresso">Espresso:</label> <br>
+            <input type="text" name="espresso" id="espresso"><br>
+        
+          <input type="submit" value="Create Your Own!">
+      </form>
+
       <div id="drinks-list"></div>
     </div>
     <script type="text/javascript" src="src/drink.js"></script>
