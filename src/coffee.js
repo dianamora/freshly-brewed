@@ -1,6 +1,6 @@
 const baseURL = "http://localhost:3000/"
 const coffeesList = document.querySelector("#coffees-list")
-const coffeeShow = document.querySelector("#coffe-show")
+const coffeeShow = document.querySelector("#coffee-show")
 
 class Coffee {
     static all = []
@@ -28,7 +28,7 @@ class Coffee {
         coffeesList.style.display="none"
         coffeeShow.style.display=""
         let coffeeId = parseInt(e.target.id.split("-")[1])
-        Drink.fetchDrinks(coffee.id)
+        Drink.fetchDrinks(coffeeId)
     }
 
     addToDom(){
