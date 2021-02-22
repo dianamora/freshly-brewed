@@ -3,7 +3,7 @@ const coffeesList = document.querySelector("#coffees-list")
 
 class Coffee {
     static all = []
-    constructor(id, name, img_url){
+    constructor({id, name, img_url}){
         this.id = id
         this.name = name
         this.img_url = img_url
@@ -16,11 +16,18 @@ class Coffee {
         .then(res => res.json())
         .then(coffeeData => {
             coffeeData.forEach(coffee => {
-                let img = document.createElement('img');
-                img.src = coffee.img_url
-                img.id = `coffee-${coffee.id}`
-                coffeesList.appendChild(img)
+                let covfefe = new Coffee(coffee)
+                console.log(covfefe)
+                covfefe.addToDom()
              })
         })
+    } 
+
+    addToDom(){
+        let img = document.createElement('img');
+        img.src = this.img_url
+        img.id = `coffee-${this.id}`
+        coffeesList.appendChild(img)
     }
-} 
+    
+}
