@@ -23,6 +23,12 @@ class Coffee {
         })
     } 
 
+    static handleClick(e){
+        coffeesList.style.display="none"
+        let coffeeId = parseInt(e.target.id.split("-")[1])
+        Drink.fetchDrinks(coffee.id)
+    }
+
     addToDom(){
         let img = document.createElement('img');
         img.src = this.img_url
