@@ -24,9 +24,10 @@ class Coffee {
         })
     } 
 
-    static handleClick(e){
+    handleClick(e){
         coffeesList.style.display="none"
         coffeeShow.style.display=""
+        this.addToShow()
         let coffeeId = parseInt(e.target.id.split("-")[1])
         Drink.fetchDrinks(coffeeId)
     }
@@ -36,7 +37,18 @@ class Coffee {
         img.src = this.img_url
         img.id = `coffee-${this.id}`
         coffeesList.appendChild(img)
-        img.addEventListener('click', Coffee.handleClick)
+        img.addEventListener('click',(e) => this.handleClick(e))
     }
     
+    addToShow(){
+        let div = document.createElement('div');
+        let title = document.createElement('h2');
+        title.innerText = this.name
+        let img = document.createElement('img');
+        img.src = this.img_url
+        img.id = `coffee-${this.id}`
+        div.appendChild(title)
+        div.appendChild(img)
+        coffeeShow.prepend(div)
+    }
 }

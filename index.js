@@ -14,14 +14,14 @@ document.addEventListener('DOMContentLoaded', function(){
 //         "Accept": "application/json"
 //     },
 //     body: JSON.stringify({
-//         roast: "Dark roast",
-//         milk: "Oat milk",
-//         sweetener: "Caramel Syrup",
-//         espresso: "1 shot"
+//         roast: "Light roast",
+//         milk: "1% Low fat milk, just a light foam on top",
+//         sweetener: "None",
+//         espresso: "2 shot"
 //     })
 // }
 
-// fetch('http://localhost:3000/coffees/1/drinks', config)
+// fetch('http://localhost:3000/coffees/2/drinks', config)
 //     .then( res => res.json() )
 //     .then (res => console.log(res) )
 
