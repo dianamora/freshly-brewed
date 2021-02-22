@@ -1,5 +1,6 @@
 const baseURL = "http://localhost:3000/"
 const coffeesList = document.querySelector("#coffees-list")
+const coffeeShow = document.querySelector("#coffe-show")
 
 class Coffee {
     static all = []
@@ -17,14 +18,15 @@ class Coffee {
         .then(coffeeData => {
             coffeeData.forEach(coffee => {
                 let covfefe = new Coffee(coffee)
-                console.log(covfefe)
                 covfefe.addToDom()
+                console.log(covfefe)
              })
         })
     } 
 
     static handleClick(e){
         coffeesList.style.display="none"
+        coffeeShow.style.display=""
         let coffeeId = parseInt(e.target.id.split("-")[1])
         Drink.fetchDrinks(coffee.id)
     }
@@ -34,7 +36,7 @@ class Coffee {
         img.src = this.img_url
         img.id = `coffee-${this.id}`
         coffeesList.appendChild(img)
-        img.addEventListener('click', () => console.log(this))
+        img.addEventListener('click', Coffee.handleClick)
     }
     
 }
