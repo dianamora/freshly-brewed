@@ -1,6 +1,7 @@
 const baseURL = "http://localhost:3000/"
 const coffeesList = document.querySelector("#coffees-list")
 const coffeeShow = document.querySelector("#coffee-show")
+const submitBtn = document.querySelector("#submit")
 
 class Coffee {
     static all = []
@@ -23,6 +24,10 @@ class Coffee {
              })
         })
     } 
+
+    static createCoffee(e){
+        
+    }
 
     handleClick(e){
         coffeesList.style.display="none"
