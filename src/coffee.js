@@ -19,7 +19,6 @@ class Coffee {
             coffeeData.forEach(coffee => {
                 let covfefe = new Coffee(coffee)
                 covfefe.addToDom()
-                console.log(covfefe)
              })
         })
     } 
@@ -50,6 +49,11 @@ class Coffee {
         div.appendChild(title)
         div.appendChild(img)
         coffeeShow.prepend(div)
+        let input = document.createElement('input')
+        input.type="hidden"
+        input.value= this.id
+        input.id= "coffee_id"
+        coffeeForm.prepend(input)
     }
 
 }

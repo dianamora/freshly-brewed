@@ -25,18 +25,41 @@ class Drink {
         
     }
 
-    static createDrink(e){
+    static createDrink(e) {
         e.preventDefault()
         let roast = document.querySelector("#roast").value
         let milk = document.querySelector("#milk").value
         let sweetener = document.querySelector("#sweetener").value
         let espresso = document.querySelector("#espresso").value
-        debugger;
+        let coffeeId = document.querySelector("#coffee_id").value
+
+        coffeeForm.reset() 
+        let drinkObj = {
+            roast, milk, sweetener, espresso
+        }
+
+        let config = {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept' : 'application/json', 
+            }, 
+            body: JSON.stringify(drinkObj)
+        }
+
+        fetch(`http://localhost:3000/coffees/${coffeeId}/drinks`, config)
+        .then(res => res.json())
+        .then(res => {
+            let d = new Drink(res)
+            d.addToDom()
+            newCoffee.style.display=""
+            coffeeForm.style.display="none"
+        })
     }
 
     static listenForEvents() {
         newCoffee.addEventListener('click', this.showForm)
-        coffeeForm.addEventListener('submit', (e) => Drink.createDrink)
+        coffeeForm.addEventListener('submit', (e) => Drink.createDrink(e))
     }
 
     static showForm() {
