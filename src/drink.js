@@ -1,3 +1,6 @@
+const newCoffee = document.querySelector("#new-coffee")
+const coffeeForm = document.querySelector('#coffee-form')
+
 class Drink {
     constructor({id, roast, milk, sweetener, espresso}){
         this.roast = roast
@@ -21,6 +24,26 @@ class Drink {
         })
         
     }
+
+    static createDrink(e){
+        e.preventDefault()
+        let roast = document.querySelector("#roast").value
+        let milk = document.querySelector("#milk").value
+        let sweetener = document.querySelector("#sweetener").value
+        let espresso = document.querySelector("#espresso").value
+        debugger;
+    }
+
+    static listenForEvents() {
+        newCoffee.addEventListener('click', this.showForm)
+        coffeeForm.addEventListener('submit', (e) => Drink.createDrink)
+    }
+
+    static showForm() {
+        newCoffee.style.display="none"
+        coffeeForm.style.display=""
+    }
+
 
     addToDom(){
         this.drinksList.appendChild(this.setElementHTML())
