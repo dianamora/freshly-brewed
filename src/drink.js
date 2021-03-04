@@ -73,15 +73,14 @@ class Drink {
         
     }
     static goBack() {
-        // backbutton.style.display="none"
-        // document.querySelector("#coffee-show").innerHTML = " "
         document.querySelector("#drinks-list").innerHTML = " "
-        // document.querySelector("#coffee-form").innerHTML = " "
-        // document.querySelector("#new-coffee").remove = " "
         document.querySelector("#coffee-show").style.display = "none"
         document.querySelector("#coffees-list").style.display = "block"
 
-
+        // backbutton.style.display="none"
+        // document.querySelector("#coffee-show").innerHTML = " "
+        // document.querySelector("#coffee-form").innerHTML = " "
+        // document.querySelector("#new-coffee").remove = " "
 
         
         //back button is clicked

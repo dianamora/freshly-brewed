@@ -6,6 +6,8 @@
     width: 200px;
 }
 
-div {
-    background-color: fuchsia;
+div p {
+    background-color: floralwhite;
+    width: 200px;
+    
 }
