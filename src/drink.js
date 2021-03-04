@@ -1,5 +1,6 @@
 const newCoffee = document.querySelector("#new-coffee")
 const coffeeForm = document.querySelector('#coffee-form')
+const backbutton = document.querySelector('#backbutton')
 
 class Drink {
     constructor({id, roast, milk, sweetener, espresso}){
@@ -52,7 +53,7 @@ class Drink {
         .then(res => {
             let d = new Drink(res)
             d.addToDom()
-            newCoffee.style.display=""
+            newCoffee.style.display="block"
             coffeeForm.style.display="none"
         })
     }
@@ -64,7 +65,34 @@ class Drink {
 
     static showForm() {
         newCoffee.style.display="none"
-        coffeeForm.style.display=""
+        coffeeForm.style.display="block"
+    }
+
+    static listenForBackBtn() {
+        backbutton.addEventListener('click', this.goBack)
+        
+    }
+    static goBack() {
+        // backbutton.style.display="none"
+        // document.querySelector("#coffee-show").innerHTML = " "
+        document.querySelector("#drinks-list").innerHTML = " "
+        // document.querySelector("#coffee-form").innerHTML = " "
+        // document.querySelector("#new-coffee").remove = " "
+        document.querySelector("#coffee-show").style.display = "none"
+        document.querySelector("#coffees-list").style.display = "block"
+
+
+
+        
+        //back button is clicked
+        //user is taken to the initial page upload which loads all the coffees 
+        //will have to remove instance of drink on page (individual id)(check)
+        //will have to add all instances of coffees (id, name, and img_url)
+        //the back button has to disappear after (check)
+        //
+        //COMPLETE BUTTON CHALLENGE: both buttons (back and new) should not be seen on
+        // the main page until we actuallyu click something, and then we want to see them
+        // when we click something and when we click back we want them to disappear again. handling styles (try hidden field/hide). add 5 coffees back WITHOUT fetching them (hint: try accessing Coffee.all). 
     }
 
 

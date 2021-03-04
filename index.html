@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 
   <head>
+    <link rel="stylesheet" type="text/css" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,9 +17,10 @@
   <body>
 
     <h1><center>FRESHLY BREWED</center></h1>
-   <center> <div id="coffees-list"></div></center>
+   <center> <div id="coffees-list"></div></center> 
      
-   <center><div id="coffee-show" style="display:none"></center>
+   <center><div id="coffee-show" style="display:none">
+    <center><div id="drinks-list"></div></center>
               <center><button id="new-coffee">New Coffee</button></center>
             <center> <form id="coffee-form" style="display:none">
                 <label for="roast">Roast:</label><br>
@@ -34,11 +36,14 @@
                 <input type="submit" value="Create Your Own!">
               </form></center>
           
-            <center><div id="drinks-list"></div></center>
-           </div>
+           
+            <button id="backbutton">Back</button>
+           </div></center>
+
+
     <script type="text/javascript" src="src/drink.js"></script>
     <script type="text/javascript" src="src/coffee.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="src/index.js"></script>
   </body>
 
 </html>

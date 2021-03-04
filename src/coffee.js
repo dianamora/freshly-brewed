@@ -25,7 +25,7 @@ class Coffee {
 
     handleClick(e){
         coffeesList.style.display="none"
-        coffeeShow.style.display=""
+        coffeeShow.style.display="block"
         this.addToShow()
         let coffeeId = parseInt(e.target.id.split("-")[1])
         Drink.fetchDrinks(coffeeId)
@@ -35,12 +35,14 @@ class Coffee {
         let img = document.createElement('img');
         img.src = this.img_url
         img.id = `coffee-${this.id}`
+        img.className = 'coffee-size'
         coffeesList.appendChild(img)
         img.addEventListener('click',(e) => this.handleClick(e))
     }
     
     addToShow(){
-        let div = document.createElement('div');
+        // let div = document.createElement('div');
+        let div = document.querySelector('#drinks-list');
         let title = document.createElement('h2');
         title.innerText = this.name
         let img = document.createElement('img');
