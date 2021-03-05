@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
    Coffee.fetchCoffees()
    Drink.listenForEvents()
    Drink.listenForBackBtn()
+   Coffee.listenforKeyDown()
 })
 
 

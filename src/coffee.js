@@ -1,6 +1,7 @@
 const baseURL = "http://localhost:3000/"
 const coffeesList = document.querySelector("#coffees-list")
 const coffeeShow = document.querySelector("#coffee-show")
+const inputSearch = document.querySelector("#search")
 
 class Coffee {
     static all = []
@@ -58,4 +59,28 @@ class Coffee {
         coffeeForm.prepend(input)
     }
 
+    static listenforKeyDown() {
+        inputSearch.addEventListener('keydown', this.inputFilter)
+    }
+    static inputFilter() {
+        const text = document.querySelector('#search').value 
+        const filtered = Coffee.all.filter(coffee => coffee.name.includes(text))
+        //when event is detected, recognize what input is and filter through Coffee.all
+        //present relevant Coffee.all
+        //hide everything else 
+        //display only capp (ex.)
+        document.querySelector("#coffees-list").innerHTML = ""
+       filtered.forEach(coffee => coffee.addToDom())
+       
+
+        
+    }    
+
 }
+
+// static goBack() {
+//     document.querySelector("#drinks-list").innerHTML = " "
+//     document.querySelector("#coffee-show").style.display = "none"
+//     document.querySelector("#coffees-list").style.display = "block"
+
+
