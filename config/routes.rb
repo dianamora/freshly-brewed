@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "drinks#index"
   resources :drinks
   resources :coffees, only: [:index, :show] do 
     resources :drinks, only: [:create, :index]
